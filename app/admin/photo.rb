@@ -5,7 +5,7 @@ ActiveAdmin.register Photo do
     selectable_column
     id_column
     column :title
-    column :image { |photo| image_tag(photo.image.url, width: '200px') }
+    column :image do |photo| image_tag(photo.image.url, width: '200px') end
     column :visible
     actions
   end
@@ -23,7 +23,7 @@ ActiveAdmin.register Photo do
   show do
     attributes_table do
       row :title
-      row :image { |photo| image_tag(photo.image.url, width: '400px') }
+      row :image do |photo| image_tag(photo.image.url, width: '400px') end
       row :visible
     end
   end
